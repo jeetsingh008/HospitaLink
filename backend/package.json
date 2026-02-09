@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "A hospital appointment booking application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "Node",
+    "CORS",
+    "JWT",
+    "Dual",
+    "Layer",
+    "Authentication",
+    "Jeet",
+    "Singh"
+  ],
+  "author": "Jeet Singh",
+  "license": "ISC"
+}
