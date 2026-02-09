@@ -4,7 +4,7 @@
   "description": "A hospital appointment booking application",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "keywords": [
     "Express",
@@ -18,5 +18,8 @@
     "Singh"
   ],
   "author": "Jeet Singh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
