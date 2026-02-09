@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "A hospital appointment booking application",
-  "main": "server.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node server.js"
@@ -22,5 +22,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
