@@ -18,7 +18,7 @@ const slotSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    doctorID: {
+    doctorId: {
       type: Schema.Types.ObjectId,
       ref: "Doctor",
       required: true,
