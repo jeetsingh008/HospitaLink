@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const doctorSchema = new Schema(
+const patientSchema = new Schema(
   {
     name: {
       type: String,
@@ -18,20 +18,12 @@ const doctorSchema = new Schema(
       type: String,
       required: [true, "Password is required"],
     },
-    phoneNumber: {
-      type: String,
-      required: true,
-    },
-    specialization: {
-      type: String,
-      default: "General Physician",
-    },
     role: {
       type: String,
-      default: "doctor",
+      default: "patient",
     },
   },
   { timestamps: true }
 );
 
-export const Doctor = mongoose.model("Doctor", doctorSchema);
+export const Patient = mongoose.model("Patient", patientSchema);
