@@ -2,10 +2,10 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-import authRouter from "./routes/auth.routes.js";
-import patientRouter from "./routes/patient.routes.js";
-import doctorRouter from "./routes/doctor.routes.js";
-import adminRouter from "./routes/admin.routes.js";
+import authRouter from "./routes/auth.route.js";
+import patientRouter from "./routes/patient.route.js";
+import doctorRouter from "./routes/doctor.route.js";
+import adminRouter from "./routes/admin.route.js";
 import { ApiError } from "./utils/ApiError.js";
 
 export const app = express();
@@ -26,9 +26,6 @@ app.use("/api/v1/patients", patientRouter);
 app.use("/api/v1/doctors", doctorRouter);
 app.use("/api/v1/admin", adminRouter);
 
-app.use("*", (req, res, next) => {
-  next(new ApiError(404, "Route not found"));
-});
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
