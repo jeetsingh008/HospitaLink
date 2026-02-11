@@ -1,5 +1,4 @@
-import { useAllAppointments } from "../../hooks/useAdmin";
-import { useDoctors } from "../../hooks/usePatient";
+import { useAllAppointments, useAdminDoctors } from "../../hooks/useAdmin";
 import { Card } from "../../components/ui";
 import { Users, Calendar, CheckCircle, Clock } from "lucide-react";
 import clsx from "clsx";
@@ -7,7 +6,7 @@ import { format } from "date-fns";
 
 const AdminDashboard = () => {
     const { data: appointments, isLoading: isLoadingApts } = useAllAppointments();
-    const { data: doctors, isLoading: isLoadingDocs } = useDoctors();
+    const { data: doctors, isLoading: isLoadingDocs } = useAdminDoctors();
 
     const stats = [
         {

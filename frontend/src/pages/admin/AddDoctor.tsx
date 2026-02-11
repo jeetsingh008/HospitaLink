@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useAddDoctor } from "../../hooks/useAdmin";
 import { Button, Input, Card } from "../../components/ui";
-import { UserPlus } from "lucide-react";
+import { UserPlus, ArrowLeft } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddDoctor = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: "",
         username: "",
@@ -27,6 +29,7 @@ const AddDoctor = () => {
             onSuccess: () => {
                 setMsg("Doctor added successfully");
                 setFormData({ name: "", username: "", password: "", specialization: "", phoneNumber: "" });
+                setTimeout(() => navigate("/admin/doctors"), 1500);
             },
             onError: (err: any) => {
                 setError(err.response?.data?.message || "Failed to add doctor");
@@ -36,6 +39,10 @@ const AddDoctor = () => {
 
     return (
         <div className="max-w-2xl mx-auto">
+            <Link to="/admin/doctors" className="inline-flex items-center text-gray-500 hover:text-gray-700 mb-6">
+                <ArrowLeft size={20} className="mr-2" /> Back to Doctors
+            </Link>
+
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <UserPlus className="text-emerald-600" /> Add New Doctor
             </h2>

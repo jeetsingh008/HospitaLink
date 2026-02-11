@@ -4,6 +4,21 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { Doctor } from "../models/doctor.model.js";
 import { Appointment } from "../models/appointment.model.js";
 
+export const getAllDoctors = asyncHandler(async (req, res) => {
+    const doctors = await Doctor.find({ role: "doctor" }).select("-password");
+    
+    if (!doctors) {
+        throw new ApiError(404, "No doctors found");
+    }
+
+    return res
+        .status(200)
+        .json(
+            new ApiResponse(200, doctors, "Doctors fetched successfully")
+        );
+});
+
+
 export const addDoctor = asyncHandler(async (req, res) => {
   const { name, username, password, phoneNumber, specialization } = req.body;
 

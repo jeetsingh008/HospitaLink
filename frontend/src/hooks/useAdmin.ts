@@ -16,6 +16,17 @@ export const useAddDoctor = () => {
     })
 }
 
+// Get all doctors (Admin)
+export const useAdminDoctors = () => {
+    return useQuery({
+        queryKey: ["doctors", "admin"],
+        queryFn: async () => {
+            const { data } = await api.get("/admin/doctors");
+            return data.data as Doctor[];
+        }
+    })
+}
+
 // Get all appointments (Admin)
 export const useAllAppointments = () => {
     return useQuery({

@@ -14,6 +14,8 @@ import DoctorDashboard from './pages/doctor/Dashboard';
 // Admin Pages
 import AdminDashboard from './pages/admin/Dashboard';
 import AddDoctor from './pages/admin/AddDoctor';
+import DoctorsList from './pages/admin/DoctorsList';
+import AdminAppointments from './pages/admin/AdminAppointments';
 
 function App() {
     return (
@@ -74,6 +76,14 @@ function App() {
                     path="admin/doctors"
                     element={
                         <ProtectedRoute allowedRoles={['admin']}>
+                            <DoctorsList />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="admin/add-doctor"
+                    element={
+                        <ProtectedRoute allowedRoles={['admin']}>
                             <AddDoctor />
                         </ProtectedRoute>
                     }
@@ -82,8 +92,7 @@ function App() {
                     path="admin/appointments"
                     element={
                         <ProtectedRoute allowedRoles={['admin']}>
-                            <AdminDashboard />
-                            {/* Admin Dashboard handles appointments view too */}
+                            <AdminAppointments />
                         </ProtectedRoute>
                     }
                 />
