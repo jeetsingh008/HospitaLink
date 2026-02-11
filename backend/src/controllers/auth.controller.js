@@ -1,4 +1,4 @@
-import  asyncHandler  from "../utils/asyncHandler.js";
+import asyncHandler from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { Patient } from "../models/patient.model.js";
@@ -41,7 +41,8 @@ export const login = asyncHandler(async (req, res) => {
 
   const options = {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: true, // Must be true for sameSite: "none" to work
+    sameSite: "none",
   };
 
   return res
