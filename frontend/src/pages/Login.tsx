@@ -25,9 +25,8 @@ const Login = () => {
             const response = await api.post("/auth/login", { username, password, role });
             const { user, accessToken } = response.data.data;
 
-            login(user, accessToken); // Persist user
+            login(user, accessToken);
 
-            // Redirect based on role
             if (user.role === 'patient') navigate("/patient/dashboard");
             else if (user.role === 'doctor') navigate("/doctor/dashboard");
             else if (user.role === 'admin') navigate("/admin/dashboard");
@@ -60,7 +59,6 @@ const Login = () => {
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Role Selection */}
                     <div className="grid grid-cols-3 gap-2 mb-6">
                         {(["patient", "doctor", "admin"] as const).map((r) => (
                             <button

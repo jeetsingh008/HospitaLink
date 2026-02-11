@@ -56,7 +56,6 @@ const AdminDashboard = () => {
         <div className="space-y-8">
             <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
 
-            {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {stats.map((stat) => {
                     const Icon = stat.icon;
@@ -74,7 +73,6 @@ const AdminDashboard = () => {
                 })}
             </div>
 
-            {/* Recent Appointments Table */}
             <Card className="overflow-hidden">
                 <div className="px-6 py-4 border-b border-gray-100">
                     <h3 className="text-lg font-medium text-gray-900">Recent Appointments</h3>

@@ -2,7 +2,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import api from "../lib/axios";
 import { Doctor, Slot, Appointment } from "../types";
 
-// Fetch all doctors
 export const useDoctors = () => {
     return useQuery({
         queryKey: ["doctors"],
@@ -13,7 +12,6 @@ export const useDoctors = () => {
     });
 };
 
-// Fetch slots for a doctor
 export const useDoctorSlots = (doctorId: string | null) => {
     return useQuery({
         queryKey: ["slots", doctorId],
@@ -26,7 +24,6 @@ export const useDoctorSlots = (doctorId: string | null) => {
     });
 };
 
-// Book an appointment
 export const useBookAppointment = () => {
     const queryClient = useQueryClient();
     return useMutation({
@@ -41,7 +38,6 @@ export const useBookAppointment = () => {
     })
 }
 
-// Fetch patient appointments
 export const usePatientAppointments = () => {
     return useQuery({
         queryKey: ["appointments", "patient"],
@@ -52,7 +48,6 @@ export const usePatientAppointments = () => {
     })
 }
 
-// Cancel appointment
 export const useCancelAppointment = () => {
     const queryClient = useQueryClient();
     return useMutation({

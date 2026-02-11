@@ -50,7 +50,6 @@ const DoctorDashboard = () => {
 
     return (
         <div className="space-y-8">
-            {/* Create Slot Section */}
             <section>
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Manage Schedule</h2>
                 <Card className="max-w-3xl">
@@ -97,7 +96,6 @@ const DoctorDashboard = () => {
                 </Card>
             </section>
 
-            {/* Appointments Section */}
             <section>
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Appointments</h2>
 

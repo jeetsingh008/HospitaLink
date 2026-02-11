@@ -89,7 +89,6 @@ const BookingModal = ({ isOpen, onClose, doctor }: { isOpen: boolean; onClose: (
         );
     };
 
-    // Group slots by date
     const groupedSlots = slots?.reduce((acc, slot) => {
         if (slot.isBooked) return acc;
         const date = new Date(slot.date).toLocaleDateString();

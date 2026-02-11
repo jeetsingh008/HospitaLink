@@ -24,7 +24,6 @@ const Register = () => {
 
         try {
             await api.post("/patients/register", formData);
-            // On success, redirect to login
             navigate("/login");
         } catch (err: any) {
             setError(err.response?.data?.message || "Registration failed. Please try again.");

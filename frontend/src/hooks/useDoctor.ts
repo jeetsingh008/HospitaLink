@@ -2,7 +2,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import api from "../lib/axios";
 import { Appointment } from "../types";
 
-// Create a slot
 export const useCreateSlot = () => {
     return useMutation({
         mutationFn: async (payload: { date: Date; startTime: string; endTime: string }) => {
@@ -12,7 +11,6 @@ export const useCreateSlot = () => {
     })
 }
 
-// Get doctor appointments
 export const useDoctorAppointments = () => {
     return useQuery({
         queryKey: ["appointments", "doctor"],
@@ -23,7 +21,6 @@ export const useDoctorAppointments = () => {
     })
 }
 
-// Update appointment status
 export const useUpdateAppointmentStatus = () => {
     const queryClient = useQueryClient();
     return useMutation({

@@ -11,7 +11,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        {/* 2. Wrap App here */}
         <AuthProvider>
           <App />
         </AuthProvider>

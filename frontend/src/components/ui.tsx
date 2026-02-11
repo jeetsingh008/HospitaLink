@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from "react";
 
-// Card Component
 export const Card = ({ children, className }: { children: ReactNode; className?: string }) => {
     return (
         <div className={clsx("bg-white rounded-lg shadow-sm border border-gray-100 p-6", className)}>
@@ -10,7 +9,6 @@ export const Card = ({ children, className }: { children: ReactNode; className?:
     );
 };
 
-// Button Component
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: "primary" | "secondary" | "danger" | "ghost";
     size?: "sm" | "md" | "lg";
@@ -51,7 +49,6 @@ export const Button = ({
     );
 };
 
-// Input Component
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     error?: string;

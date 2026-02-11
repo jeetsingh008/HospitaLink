@@ -17,7 +17,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Check for persisted user session
         const storedUser = localStorage.getItem("user");
         const storedToken = localStorage.getItem("accessToken");
 

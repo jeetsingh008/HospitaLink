@@ -20,11 +20,11 @@ export interface Admin extends User {
 
 export interface Slot {
     _id: string;
-    date: string; // ISO Date string
+    date: string; 
     startTime: string;
     endTime: string;
     isBooked: boolean;
-    doctorId: string; // or popluated Doctor object
+    doctorId: string;
     appointmentId?: string;
 }
 

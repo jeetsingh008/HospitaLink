@@ -39,7 +39,7 @@ const MyAppointments = () => {
             <div className="space-y-4">
                 {appointments?.map((apt) => {
                     const doctor = apt.doctorId as Doctor;
-                    const slot = apt.slotId as any; // Type assertion for joined data
+                    const slot = apt.slotId as any;
 
                     return (
                         <Card key={apt._id} className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">

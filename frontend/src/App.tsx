@@ -4,14 +4,11 @@ import Register from './pages/Register';
 import Layout from './layouts/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 
-// Patient Pages
 import PatientDashboard from './pages/patient/Dashboard';
 import MyAppointments from './pages/patient/MyAppointments';
 
-// Doctor Pages
 import DoctorDashboard from './pages/doctor/Dashboard';
 
-// Admin Pages
 import AdminDashboard from './pages/admin/Dashboard';
 import AddDoctor from './pages/admin/AddDoctor';
 import DoctorsList from './pages/admin/DoctorsList';
@@ -26,7 +23,6 @@ function App() {
             <Route path="/" element={<Layout />}>
                 <Route index element={<Navigate to="/login" replace />} />
 
-                {/* Patient Routes */}
                 <Route
                     path="patient/dashboard"
                     element={
@@ -44,7 +40,6 @@ function App() {
                     }
                 />
 
-                {/* Doctor Routes */}
                 <Route
                     path="doctor/dashboard"
                     element={
@@ -58,12 +53,10 @@ function App() {
                     element={
                         <ProtectedRoute allowedRoles={['doctor']}>
                             <DoctorDashboard />
-                            {/* Doctor Dashboard handles both slots and appointments for simplicity as per requirements */}
                         </ProtectedRoute>
                     }
                 />
 
-                {/* Admin Routes */}
                 <Route
                     path="admin/dashboard"
                     element={

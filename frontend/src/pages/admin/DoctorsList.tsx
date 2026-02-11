@@ -58,7 +58,6 @@ const DoctorsList = () => {
                                     <Phone size={16} className="text-gray-400" />
                                     <span>{doctor.phoneNumber || "No phone number"}</span>
                                 </div>
-                                {/* Add more details if available in the future */}
                             </div>
                         </div>
                     </Card>

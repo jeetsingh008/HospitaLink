@@ -39,7 +39,6 @@ const Layout = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 flex">
-            {/* Mobile Sidebar Overlay */}
             {isSidebarOpen && (
                 <div
                     className="fixed inset-0 bg-black/50 z-20 lg:hidden"
@@ -47,7 +46,6 @@ const Layout = () => {
                 />
             )}
 
-            {/* Sidebar */}
             <aside
                 className={clsx(
                     "fixed lg:static inset-y-0 left-0 z-30 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out lg:transform-none flex flex-col",
@@ -107,7 +105,6 @@ const Layout = () => {
                 </div>
             </aside>
 
-            {/* Main Content */}
             <div className="flex-1 flex flex-col min-w-0">
                 <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 lg:px-8">
                     <button
@@ -116,7 +113,7 @@ const Layout = () => {
                     >
                         <Menu size={24} />
                     </button>
-                    <div className="flex-1" /> {/* Spacer */}
+                    <div className="flex-1" />
                 </header>
 
                 <main className="flex-1 overflow-y-auto p-4 lg:p-8">
