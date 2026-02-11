@@ -4,7 +4,7 @@ import {
     updateAppointmentStatus, 
     createSlot 
 } from "../controllers/doctor.controller.js";
-import { verifyJWT, authorizeRoles } from "../middlewares/auth.middleware.js";
+import { verifyJWT, authorizeRoles } from "../middleware/verifyJWTandRole.js";
 
 const router = Router();
 
