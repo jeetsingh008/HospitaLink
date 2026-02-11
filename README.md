@@ -63,8 +63,6 @@ MONGODB_URI=mongodb+srv://<your-connection-string> # or mongodb://localhost:2701
 CORS_ORIGIN=http://localhost:5173 # Adjust based on frontend URL
 ACCESS_TOKEN_SECRET=your_access_token_secret
 ACCESS_TOKEN_EXPIRY=1d
-REFRESH_TOKEN_SECRET=your_refresh_token_secret
-REFRESH_TOKEN_EXPIRY=10d
 ```
 
 **Seed Database (Create Admin)**
