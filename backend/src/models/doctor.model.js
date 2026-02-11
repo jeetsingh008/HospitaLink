@@ -1,4 +1,6 @@
 import mongoose, { Schema } from "mongoose";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const doctorSchema = new Schema(
   {
@@ -33,12 +35,12 @@ const doctorSchema = new Schema(
   },
   { timestamps: true }
 );
-doctorSchema.pre("save", async function (next) {
+doctorSchema.pre("save", async function () {
   if (!this.isModified("password")) {
-    return next();
+    return;
   }
+
   this.password = await bcrypt.hash(this.password, 10);
-  next();
 });
 
 doctorSchema.methods.isPasswordCorrect = async function (password) {
