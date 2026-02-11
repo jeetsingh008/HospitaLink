@@ -120,6 +120,7 @@ dist/
 # Vite
 dist-ssr
 *.local
+.vite*
 
 # Editor directories and files
 .idea

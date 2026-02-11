@@ -28,12 +28,12 @@ const patientSchema = new Schema(
   { timestamps: true }
 );
 
-patientSchema.pre("save", async function (next) {
+patientSchema.pre("save", async function () {
   if (!this.isModified("password")) {
-    return next();
+    return;
   }
+
   this.password = await bcrypt.hash(this.password, 10);
-  next();
 });
 
 patientSchema.methods.isPasswordCorrect = async function (password) {
