@@ -1,6 +1,6 @@
 import { usePatientAppointments, useCancelAppointment } from "../../hooks/usePatient";
 import { Card, Button } from "../../components/ui";
-import { Calendar, Clock, MapPin, AlertCircle } from "lucide-react";
+import { Calendar, Clock} from "lucide-react";
 import clsx from "clsx";
 import { format } from "date-fns";
 import { Doctor } from "../../types";

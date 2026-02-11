@@ -7,7 +7,6 @@ import {
     UserCircle,
     LogOut,
     Menu,
-    X,
     Clock
 } from "lucide-react";
 import { useState } from "react";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useCreateSlot, useDoctorAppointments, useUpdateAppointmentStatus } from "../../hooks/useDoctor";
-import { Card, Button, Input } from "../../components/ui";
+import { Card, Button } from "../../components/ui";
 import { Calendar, Clock, CheckCircle, XCircle, Check } from "lucide-react";
 import clsx from "clsx";
 import { format } from "date-fns";
