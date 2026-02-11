@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const DB_NAME = "appointment_booking_app";
+export const DB_NAME = "appointment_booking_app";
 const connectDB = async () => {
     try {
         const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);

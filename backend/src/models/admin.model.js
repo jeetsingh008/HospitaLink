@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 const adminSchema = new Schema(
   {
     name: {
@@ -26,12 +27,12 @@ const adminSchema = new Schema(
   { timestamps: true }
 );
 
-adminSchema.pre("save", async function (next) {
+adminSchema.pre("save", async function () {
   if (!this.isModified("password")) {
-    return next();
+    return;
   }
+
   this.password = await bcrypt.hash(this.password, 10);
-  next();
 });
 
 adminSchema.methods.isPasswordCorrect = async function (password) {
